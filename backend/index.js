@@ -5,9 +5,8 @@ const app = express();
 
 const PORT = 5050;
 
-// Modificar antes de colocar no ar
-const DATABASE = 'mongodb://localhost/items';
-
+// URL para o Banco de Dados
+const DATABASE = 'mongodb+srv://sebastiaosilva:sebastiao2020@cluster0-fbga6.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
 // Conecta ao banco de dados
 mongoose.connect(DATABASE, {
