@@ -1,6 +1,7 @@
 
 const Product = require('../models/Product');
 
+
 const index = async (req, res) => {
     const category = req.params.category;
     const products = await Product.find({ category });
@@ -22,7 +23,11 @@ const store = async (req, res) => {
 }
 
 const update = async (req, res) => {
-    
+    const _id = req.body._id;
+    const data = req.body;
+    const product = await Product.findByIdAndUpdate({ _id }, data);
+
+    res.send(product);
 }
 
 module.exports = {
