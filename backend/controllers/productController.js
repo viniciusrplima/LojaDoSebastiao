@@ -30,8 +30,15 @@ const update = async (req, res) => {
     res.send(product);
 }
 
+const remove = async (req, res) => {
+    const _id = req.params.id;
+    const product = await Product.findByIdAndDelete({ _id });
+    res.send(product);
+}
+
 module.exports = {
     index,
     store, 
-    update
+    update, 
+    remove
 };
