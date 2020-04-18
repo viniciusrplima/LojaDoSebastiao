@@ -1,12 +1,12 @@
 const express = require('express');
 const router = require('./routes');
-const database = require('./database/database');
+const mongo = require('./database/mongo');
 const app = express();
 
 const PORT = 5050;
 
 // Conecta ao banco de dados
-database.connect();
+mongo.connect();
 
 // Todos os Bodies de requisicoes serao tratadas no formato JSON
 app.use(express.json());
