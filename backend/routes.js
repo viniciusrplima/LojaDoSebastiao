@@ -1,7 +1,11 @@
 
 const express = require('express');
+const multer = require('multer');
+const multerConfig = require('./database/config/multer');
+
 const router = express.Router();
 const productController = require('./controllers/productController');
+const imageController = require('./controllers/imageController');
 
 // Rotas para manipulação dos produtos
 
@@ -46,6 +50,13 @@ router.put('/', productController.update);
 // produto
 // ex.: localhost:5050/sad4a6fs5dvs56f45
 router.delete('/:id', productController.remove);
+
+// Rota de atualização de imagem
+// Utiliza body no formato Multipart
+// Recebe um arquivo e salva como imagem para o produto
+// com id passado como parâmetro
+// A imagem deve ser enviada com nome "file"
+router.post('/image/:id', multer(multerConfig).single("file"), imageController.update);
 
 
 module.exports = router;
