@@ -11,6 +11,10 @@ const connect = () => {
         useNewUrlParser: true, 
         useUnifiedTopology: true
     });
+
+    // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
+    // by default, you need to set it to false.
+    mongoose.set('useFindAndModify', false);
     
     let db = mongoose.connection
     
