@@ -33,7 +33,7 @@ const store = async (req, res) => {
 
 // Atualiza um produto com determinado id
 const update = async (req, res) => {
-    const _id = req.body._id;
+    const _id = req.params.id;
     const data = req.body;
     const product = await Product.findByIdAndUpdate({ _id }, data);
 

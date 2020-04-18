@@ -34,15 +34,14 @@ router.post('/', productController.store);
 
 // Rota de atualização - 
 // atualiza um produto já existente no banco
-// o valor _id do produto é necessário.
+// o valor _id deve ser passado como parâmetro.
 //
 // ex.: localhost:5050/
 // 	body: {
-// 		_id: "...", 
 // 		( ... )
 // 	}
 //
-router.put('/', productController.update);
+router.put('/:id', productController.update);
 
 // Rota de remoção - 
 // remove um produto do banco de dados
