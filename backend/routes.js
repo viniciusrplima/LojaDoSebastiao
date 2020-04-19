@@ -26,9 +26,7 @@ router.get('/:category', productController.index);
 //		quandity: *, 
 //		category: "..."
 // 	}
-//
-// Nota: Ainda vou cuidar de tratar as fotos
-// recebidas
+//  retorna o produto armazenado
 //
 router.post('/', productController.store);
 
@@ -36,7 +34,7 @@ router.post('/', productController.store);
 // atualiza um produto já existente no banco
 // o valor _id deve ser passado como parâmetro.
 //
-// ex.: localhost:5050/
+// ex.: localhost:5050/dofsansdfn532
 // 	body: {
 // 		( ... )
 // 	}
