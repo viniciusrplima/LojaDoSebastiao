@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Games from '../Games/Games';
+import Eletronicos from '../Eletronicos/Eletronicos';
+import Celulares from '../Celulares/Celulares';
+import Tv from '../Tv/Tv';
+import Newproduct from '../Newproduct/Newproduct';
+
+
 
 import './style.css';
 
@@ -36,7 +43,7 @@ class App extends Component {
     
                     <div className="row">
                         <div className="col s12 m12 botão">
-                            <a class="waves-effect waves-light btn  grey darken-1"><i class="material-icons left">add_box</i>Adicionar Produto</a>
+                            <a className="waves-effect waves-light btn  grey darken-1" href="/app/newproduct"><i class="material-icons left">add_box</i>Adicionar Produto</a>
                         </div>
                         <div className="container col s12 m12 botão">
                             <a class="waves-effect waves-light btn  grey darken-1"><i class="material-icons left">exit_to_app</i>Log Out</a>
@@ -47,10 +54,21 @@ class App extends Component {
                 <aside style={{ minHeight: '500px' }}>
 
                     <Switch>
-                        <Route path="/app/tv" component={() => <h1 style={{marginLeft:'400px'}}>TV</h1>}></Route>
-                        <Route path="/app/eletronicos" component={() => <h1 style={{marginLeft:'400px'}}>ELETRO</h1>}></Route>
-                        <Route path="/app/games" component={() => <h1 style={{marginLeft:'400px'}}>GAME</h1>}></Route>
-                        <Route path="/app/celulares" component={() => <h1 style={{marginLeft:'400px'}}>FONE</h1>}></Route>
+                        <Route path="/app/tv">
+                            <Tv></Tv>
+                        </Route>
+                        <Route path="/app/eletronicos">
+                            <Eletronicos></Eletronicos>
+                        </Route>
+                        <Route path="/app/games">
+                            <Games></Games>
+                        </Route>
+                        <Route path="/app/celulares">
+                            <Celulares></Celulares>
+                        </Route>
+                        <Route path="/app/newproduct">
+                            <Newproduct></Newproduct>
+                        </Route>
                     </Switch>               
     
                 </aside>    
