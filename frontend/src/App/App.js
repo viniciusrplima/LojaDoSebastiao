@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Games from '../Games/Games';
-import Eletronicos from '../Eletronicos/Eletronicos';
-import Celulares from '../Celulares/Celulares';
-import Tv from '../Tv/Tv';
-import Newproduct from '../Newproduct/Newproduct';
-import Edit from '../Edit/Edit';
+import Games from '../Views/Games';
+import Eletronicos from '../Views/Eletronicos';
+import Celulares from '../Views/Celulares';
+import Tv from '../Views/Tv';
+import Newproduct from '../Views/Newproduct';
+import Edit from '../Views/Edit';
 
 
 
-import './style.css';
+import './App.css';
 
 class App extends Component {
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import './styles/Principal.css';
 
 
 class Principal extends Component {
