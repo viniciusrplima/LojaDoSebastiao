@@ -1,9 +1,11 @@
+
+require('dotenv').config();
 const express = require('express');
 const router = require('./routes');
 const mongo = require('./database/mongo');
 const app = express();
 
-const PORT = 5050;
+const PORT = process.env.PORT;
 
 // Conecta ao banco de dados
 mongo.connect();

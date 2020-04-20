@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // URL para o Banco de Dados
-const DATABASE = 'mongodb+srv://sebastiaosilva:sebastiao2020@cluster0-fbga6.gcp.mongodb.net/test?retryWrites=true&w=majority';
+const DATABASE = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-fbga6.gcp.mongodb.net/test?retryWrites=true&w=majority`;
 
 const connect = () => {
     

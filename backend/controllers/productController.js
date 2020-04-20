@@ -3,11 +3,7 @@ const Product = require('../models/Product');
 const aws = require('aws-sdk');
 
 // Conecta ao banco de arquivos da AWS
-const s3 = new aws.S3({
-    accessKeyId: 'AKIA37WZAXA5ACYDQ75D', 
-    secretAccessKey: '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', 
-    region: 'sa-east-1'
-});
+const s3 = new aws.S3();
 
 // Retorna uma lista dos produtos de determinada categoria
 const index = async (req, res) => {
