@@ -5,6 +5,7 @@ import Eletronicos from '../Eletronicos/Eletronicos';
 import Celulares from '../Celulares/Celulares';
 import Tv from '../Tv/Tv';
 import Newproduct from '../Newproduct/Newproduct';
+import Edit from '../Edit/Edit';
 
 
 
@@ -68,6 +69,9 @@ class App extends Component {
                         </Route>
                         <Route path="/app/newproduct">
                             <Newproduct></Newproduct>
+                        </Route>
+                        <Route path="/app/edit">
+                            <Edit></Edit>
                         </Route>
                     </Switch>               
     

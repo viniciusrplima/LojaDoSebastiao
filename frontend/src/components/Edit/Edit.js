@@ -1,15 +1,21 @@
 import React from 'react';
 
 
-export default function Newproduct() {
+export default function Edit() {
   return (
     <div className="section" id="index-banner">
       <div className="row" style={{ marginBottom: '0' }}>
         <div className="col s12 m10 offset-m2 l8 offset-l4 xl8 offset-xl3 center-on-small-only">
-          <h2 className="header">Novo Produto</h2>
+          <h2 className="header">Editar Produto</h2>
           <div className="row">
             <form className="col s12">
-
+            <div className="row">
+                <div className="input-field col s12 m12 l6">
+                  <i className="material-icons prefix">panorama_fish_eye</i>
+                  <input id="id" type="text" className="validate" disabled />
+                  <label for="id">Id do Produto</label>
+                </div>
+              </div>
               <div className="row">
                 <div className="input-field col s12 m12 l6">
                   <i className="material-icons prefix">add_shopping_cart</i>
@@ -38,10 +44,10 @@ export default function Newproduct() {
                     <option value="tv">Tv's</option>
                     <option value="eletronicos">Eletronicos</option>
                     <option value="videogame">Videogames</option>
-                    <option value="celulares">Celulares</option>
+                    <option value="celulares">celulares</option>
 
                   </select>
-                  <label>Selecione a Categoria</label>
+                  <label>Materialize Select</label>
                 </div>
               </div>
               <div className="row">
