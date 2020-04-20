@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import PrivateRoute from './components/PrivateRoute';
-import Principal from './components/Principal/Principal';
+import PrivateRoute from './PrivateRoute';
+import Principal from '../components/Principal/Principal';
+import App from '../components/App/App';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
@@ -13,7 +14,7 @@ class Routes extends Component {
                     <Route exact path="/">
                         <Principal></Principal>
                     </Route>
-                    <PrivateRoute path="/app" component={() => <h1>APLICAÇÃO</h1>} />
+                    <PrivateRoute path="/app" component={() => <App></App>} />
                     <Route component={() => <h1>PAGINA NOT FOUND</h1>} />
                 </Switch>
             </BrowserRouter>
