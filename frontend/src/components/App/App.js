@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
 import './style.css';
 
 class App extends Component {
@@ -28,7 +30,7 @@ class App extends Component {
                     <li><a href="/app/tv" className="white-text"><i className="material-icons white-text">tv</i>TV's</a></li>
                     <li><a href="/app/eletronicos" className="white-text"><i className="material-icons white-text">radio</i>Eletrodoméstico</a></li>
                     <li><a href="/app/games" className="white-text"><i className="material-icons white-text">games</i>Videogame</a></li>
-                    <li><a href="/app/celular" className="white-text"><i className="material-icons white-text">smartphone</i>Celulares</a></li>
+                    <li><a href="/app/celulares" className="white-text"><i className="material-icons white-text">smartphone</i>Celulares</a></li>
                     <li><div className="divider"></div></li>
                     <li><a className="subheader">Ações</a></li>
     
@@ -43,8 +45,13 @@ class App extends Component {
                 </ul>
     
                 <aside style={{ minHeight: '500px' }}>
-    
-                   
+
+                    <Switch>
+                        <Route path="/app/tv" component={() => <h1 style={{marginLeft:'400px'}}>TV</h1>}></Route>
+                        <Route path="/app/eletronicos" component={() => <h1 style={{marginLeft:'400px'}}>ELETRO</h1>}></Route>
+                        <Route path="/app/games" component={() => <h1 style={{marginLeft:'400px'}}>GAME</h1>}></Route>
+                        <Route path="/app/celulares" component={() => <h1 style={{marginLeft:'400px'}}>FONE</h1>}></Route>
+                    </Switch>               
     
                 </aside>    
             </>
