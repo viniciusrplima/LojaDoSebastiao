@@ -6,7 +6,9 @@ export default function Tv() {
     <div className="card">
       <div className="card-image">
         <img  src="/assets/img/sidenavimg.jpg"/>
-        <a className="btn-floating btn-large halfway-fab waves-effect waves-light green"><i class="material-icons">edit</i></a>
+        <a className="btn-floating btn-large halfway-fab waves-effect waves-light green" href="/app/edit">
+          <i class="material-icons">edit</i>
+          </a>
       </div>
       <div className="card-content" style={{backgroundColor: '#c62828'}}>
         <span className="card-title">NOME DO PRODUTO</span>
