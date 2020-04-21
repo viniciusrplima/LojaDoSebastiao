@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import './styles/ProductList.css';
 
 export default function ProductList({ category, products }) {
     return (
@@ -7,7 +8,7 @@ export default function ProductList({ category, products }) {
         <div class="row" style={{ marginBottom: '0' }}>
           <div class="col s12 m10 offset-m2 l8 offset-l4 xl8 offset-xl3 center-on-small-only">
             <h2 class="header">Categoria: { category }</h2>
-            <div className="col">
+            <div className="product-list">
               {
                 products.map( product => (
                 <Card
