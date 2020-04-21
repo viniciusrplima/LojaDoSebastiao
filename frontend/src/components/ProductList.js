@@ -10,7 +10,13 @@ export default function ProductList({ category, products }) {
             <h2 class="header">Categoria: { category }</h2>
             <div className="product-list">
               {
-                products.map( product => (
+                products
+                // Ordenando por quantidade em estoque
+                .sort((a, b) => {
+                  if( a.quantity > b.quantity ) return -1;
+                  else return 1;
+                })
+                .map( product => (
                 <Card
                     id={ product._id }
                     name={ product.name }

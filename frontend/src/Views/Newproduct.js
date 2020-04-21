@@ -46,7 +46,10 @@ export default function Newproduct() {
         <div className="col s12 m10 offset-m2 l8 offset-l4 xl8 offset-xl3 center-on-small-only">
           <h2 className="header">Novo Produto</h2>
           <div className="row">
-            <form className="col s12">
+            <form className="col s12"  onSubmit={event => {
+                event.preventDefault();
+                addProduct({ name, price, quantity, category, image }) 
+              }}>
 
               <div className="row">
                 <div className="input-field col s12 m12 l6" onChange={event => { setName(event.target.value) }}>
@@ -92,11 +95,11 @@ export default function Newproduct() {
                   </div>
                 </div>
               </div>
-            </form>
-              <button class="btn waves-effect waves-light grey darken-2" onClick={ event => addProduct({ name, price, quantity, category, image }) }>
+              <button class="btn waves-effect waves-light grey darken-2" type="submit" name="action">
                 Cadastrar
                 <i class="material-icons right">send</i>
               </button>
+            </form>
           </div>
         </div>
       </div>
