@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PrivateRoute from './PrivateRoute';
-import Principal from '../components/Principal/Principal';
-import App from '../components/App/App';
+import Principal from '../Views/Principal';
+import App from '../App/App';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
