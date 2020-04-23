@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- VERSAO DE DESENVOLVIMENTO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+     <!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+    
     <meta name="description" content="Web site created using create-react-app"/>
     <title>Loja do Sebastião</title>
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <!-- 
-      VERSÂO PRODUTO
-      <link rel="stylesheet" href="assets/css/materialize.min.css">
-      <link data-react-helmet="true" rel="shortcut icon" href="assets/img/icon.png"/>
-     -->
+      VERSÂO PRODUTO-->
+      <link rel="stylesheet" href="/public/assets/css/materialize.min.css">
+     
 
-
-     <!-- VERSAO DE DESENVOLVIMENTO -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   
     <link data-react-helmet="true" rel="shortcut icon" href="https://i.pinimg.com/originals/33/69/7f/33697f6bc37bacb5c924d3f73af0ab0f.png"/>
 
 
@@ -26,14 +26,14 @@
   </head>
   <body>
 
-    <div id="root"></div>
+    <div id="root" style="min-height: 320px;"></div>
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     
     
     <!-- 
-      VERSÃO DE PRODUTO
-      <script src="assets/js/materialize.min.js"></script>
-     -->
+      VERSÃO DE PRODUTO 
+      <script src="/public/assets/js/materialize.min.js"></script>
+    -->
 
     <!-- VERSÃO DE DESENVOLVIMENTO-->
 
@@ -42,12 +42,12 @@
     <script>
        $(document).ready(function(){
          $('.sidenav').sidenav();
+         $('.parallax').parallax();
          $('select').formSelect();
+         $('.fixed-action-btn').floatingActionButton();
+         $('.tooltipped').tooltip();
         });
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems, options);
-    });
+
     </script>
   </body>
 </html>

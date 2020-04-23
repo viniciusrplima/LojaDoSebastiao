@@ -9,15 +9,12 @@ class Principal extends Component {
             <>
                 <header>
                     <nav>
-                        <div Class="nav-wrapper grey darken-2">
-                            <a href="#" Class="brand-logo">Loja do Sebastião</a>
-                            <ul id="nav-mobile" Class="right hide-on-med-and-down">
-                                <li><a href="/sobre">Sobre</a></li>
-                            </ul>
+                        <div className="nav-wrapper grey darken-2">
+                            <a href="#" className="brand-logo">Loja do Sebastião</a>
                         </div>
                     </nav>
                 </header>
-                <main Style="min-height: 500px">
+                <main style={{minHeight: '500px'}}>
                     <div className="parallax-container valign-wrapper">
                         <div className="section no-pad-bot" style={{ width: '100%' }}>
                             <div className="row">
@@ -36,8 +33,8 @@ class Principal extends Component {
                             <img src="/assets/img/background2.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, px, 1000px)', filter: 'grayscale(100%)' }} />
                         </div>
                     </div>
-                    <div class="container hide-on-large-only show-on-small">
-                        <div class="section red">
+                    <div className="container hide-on-large-only show-on-small">
+                        <div className="section red">
                             <div className="container" style={{ height: '300px' }}></div>
                         </div>
                     </div>
@@ -53,7 +50,7 @@ class Principal extends Component {
                                 </div>
                                 <div className="col s12 m4">
                                     <div className="icon-block">
-                                        <h2 className="center brown-text"><i class="material-icons large">group</i></h2>
+                                        <h2 className="center brown-text"><i className="material-icons large">group</i></h2>
                                         <h5 className="center">Interface amigavél</h5>
 
                                         <p className="light">
@@ -65,7 +62,7 @@ class Principal extends Component {
 
                                 <div className="col s12 m4">
                                     <div className="icon-block">
-                                        <h2 className="center brown-text"><i class="material-icons large">settings</i></h2>
+                                        <h2 className="center brown-text"><i className="material-icons large">settings</i></h2>
                                         <h5 className="center">Fácil de manusear</h5>
 
                                         <p className="light">
@@ -82,16 +79,17 @@ class Principal extends Component {
                     </div>
 
 
-                    <div class="parallax-container valign-wrapper">
-                        <div class="section no-pad-bot" style={{ width: '100%' }}>
-                            <div class="container">
-                                <div class="row center">
-                                    <h4 class="header col s12 light white-text texto-abaixo">Sistema desenvolvido para seleção da codex, portanto imagens não contém direitos autorais</h4>
+                    <div className="parallax-container valign-wrapper">
+                        <div className="section no-pad-bot">
+                            <div className="container">
+                                <div className="row center">
+                                    <h4 className="header col s12 light white-text texto-abaixo">Sistema desenvolvido para seleção da codex, portanto imagens não contém direitos autorais</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="parallax">
-                            <img src="assets/img/background.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, 1000px)', filter: 'grayscale(100%)' }} /></div>
+                        <div className="parallax">
+                            <img src="assets/img/background.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, 1000px)', filter: 'grayscale(100%)' }} />
+                            </div>
                     </div>
                 </main>
                 <footer className="page-footer grey darken-2">
