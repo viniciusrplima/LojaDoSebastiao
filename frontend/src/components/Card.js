@@ -47,9 +47,9 @@ export default function Card({ product }) {
   return (
 
     <div className="col s12 m6 l6 xl6">
-      <div className="card" style={{ minWidth: '300px' }}>
+      <div className="card" style={{ minWidth: '300px', background }}>
         <div className="card-image" ><img src={photoURL} /></div>
-        <div className="card-content center-align" style={{ background }}>
+        <div className="card-content center-align">
           <strong className="card-title">{name}</strong>
           <div className="container">
             <h6>R$ {price}</h6>
