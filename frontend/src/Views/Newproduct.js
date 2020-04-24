@@ -29,25 +29,25 @@ export default function Newproduct() {
                 <div className="input-field col s12 m12 l6" onChange={event => { setName(event.target.value) }}>
                   <i className="material-icons prefix">add_shopping_cart</i>
                   <input id="icon_prefix" type="text" className="validate" />
-                  <label for="icon_prefix">Nome do Produto</label>
+                  <label htmlFor="icon_prefix">Nome do Produto</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12 m12 l6" onChange={event => { setPrice(event.target.value) }}>
                   <i className="material-icons prefix">attach_money</i>
                   <input id="money" type="text" className="validate" />
-                  <label for="money">Valor do Produto</label>
+                  <label htmlFor="money">Valor do Produto</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12 m12 l6" onChange={event => { setQuantity(event.target.value) }}>
                   <i className="material-icons prefix">details</i>
                   <input id="quantidade" type="text" className="validate" />
-                  <label for="quantidade">Quantidade Inicial</label>
+                  <label htmlFor="quantidade">Quantidade Inicial</label>
                 </div>
               </div>
               <div className="row">
-                <div class="input-field col s12 m12 l6" onChange={event => { setCategory(event.target.value) }}>
+                <div className="input-field col s12 m12 l6" onChange={event => { setCategory(event.target.value) }}>
                   <i className="material-icons prefix hide-on-small-only">content_paste</i>
                   <select>
                     <option value=""></option>
@@ -70,9 +70,9 @@ export default function Newproduct() {
                   </div>
                 </div>
               </div>
-              <button class="btn waves-effect waves-light grey darken-2" type="submit" name="action">
+              <button className="btn waves-effect waves-light grey darken-2" type="submit" name="action">
                 Cadastrar
-                <i class="material-icons right">send</i>
+                <i className="material-icons right">send</i>
               </button>
             </form>
           </div>
