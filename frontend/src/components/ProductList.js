@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import Card from './Card';
-import './styles/ProductList.css';
 
 export default function ProductList({ category, products }) {
     return (
-        <div class="section" id="index-banner">
-        <div class="row" style={{ marginBottom: '0' }}>
-          <div class="col s12 m10 offset-m2 l8 offset-l4 xl8 offset-xl3 center-on-small-only">
-            <h2 class="header">Categoria: { category }</h2>
-            <div className="product-list">
-              {
+        <div className="section" id="index-banner">
+        <div className="row">
+          <div className="col s12 m12 l8 offset-l4 xl8 offset-xl3">
+            <h3 className="header">Categoria: { category }</h3>
+            <div className="row">
+            
+               {
                 products
                 // Ordenando por quantidade em estoque
                 .sort((a, b) => {
@@ -18,14 +18,11 @@ export default function ProductList({ category, products }) {
                 })
                 .map( product => (
                 <Card
-                    id={ product._id }
-                    name={ product.name }
-                    price={ product.price }
-                    quantity={ product.quantity }
-                    photoURL={ product.photoURL }
+                    key = { product._id }
+                    product={ product }
                 ></Card>
                 ))
-              }
+              } 
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from '../components/ProductList';
-import axios from 'axios';
+import database from '../services/database';
 
 
 export default function Tv() {
@@ -9,7 +9,7 @@ export default function Tv() {
 
   useEffect(() => {
 
-    axios.get("https://api-loja-do-sebastiao.herokuapp.com/tv")
+    database.index('tv')
     .then( ({ data }) => {
       setProducts([...data]);
     });

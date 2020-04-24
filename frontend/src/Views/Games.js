@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from '../components/ProductList';
-import axios from 'axios';
+import database from '../services/database';
 
 
 export default function Games() {
@@ -9,7 +9,7 @@ export default function Games() {
 
   useEffect(() => {
 
-    axios.get("https://api-loja-do-sebastiao.herokuapp.com/videogame")
+    database.index('videogame')
     .then( ({ data }) => {
       setProducts([...data]);
     });
