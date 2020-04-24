@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import database from '../services/database';
 
 
 export default function Newproduct() {
@@ -10,34 +10,8 @@ export default function Newproduct() {
   const [ image, setImage ] = useState(null);
 
   
-  const addProduct = function({ name, price, quantity, category, image }) {
-
-    axios.post("https://api-loja-do-sebastiao.herokuapp.com/", {
-      name, 
-      price, 
-      quantity, 
-      category
-    }).then( ({ data }) => {
-
-      const id = data._id;
-      if(id) {
-        const formData = new FormData();
-        formData.append('file', image);
-
-        axios.post(`https://api-loja-do-sebastiao.herokuapp.com/image/${ id }`, formData, {
-          'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
-        })
-        .then(() => {
-          console.log('Foto adicionada');
-        })
-        .catch(err => {
-          console.log(err);
-        })
-      }
-
-    }).catch( err => {
-      console.log(err);
-    });
+  const addProduct = function( product ) {
+    database.store( product );
   }
 
   return (
