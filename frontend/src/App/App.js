@@ -67,9 +67,7 @@ class App extends Component {
                         <Route path="/app/newproduct">
                             <Newproduct></Newproduct>
                         </Route>
-                        <Route path="/app/edit">
-                            <Edit></Edit>
-                        </Route>
+                        <Route path="/app/edit/:id" component={Edit} />
                     </Switch>
 
                     <div className="fixed-action-btn">

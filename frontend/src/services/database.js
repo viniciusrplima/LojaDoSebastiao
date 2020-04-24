@@ -17,12 +17,7 @@ const store = ({ name, price, quantity, category, image }) => {
         // Armazena imagem
         const id = data._id;
         if(id) {
-          const formData = new FormData();
-          formData.append('file', image);
-  
-          axios.post(`${ apiURL }${ id }`, formData, {
-            'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
-          })
+          updateImage( id, image )
           .then(() => {
             console.log('Foto adicionada');
           })
@@ -36,7 +31,28 @@ const store = ({ name, price, quantity, category, image }) => {
       });
 }
 
+const update = ( id, product ) => {
+    return axios.put(`${ apiURL }${ id }`, product);
+}
+
+const remove = ( id ) => {
+    return axios.delete(`${ apiURL }${ id }`);
+}
+
+const updateImage = ( id, image ) => {
+    const formData = new FormData();
+    formData.append('file', image);
+
+    return axios.post(`${ apiURL }image/${ id }`, formData, {
+      'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+    });
+
+}
+
 export default {
     index, 
-    store
+    store, 
+    update, 
+    remove, 
+    updateImage
 }

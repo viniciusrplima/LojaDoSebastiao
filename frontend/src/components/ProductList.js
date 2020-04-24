@@ -18,11 +18,8 @@ export default function ProductList({ category, products }) {
                 })
                 .map( product => (
                 <Card
-                    key={ product._id }
-                    name={ product.name }
-                    price={ product.price }
-                    quantity={ product.quantity }
-                    photoURL={ product.photoURL }
+                    key = { product._id }
+                    product={ product }
                 ></Card>
                 ))
               } 

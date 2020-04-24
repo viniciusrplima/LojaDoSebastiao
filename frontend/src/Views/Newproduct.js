@@ -50,6 +50,7 @@ export default function Newproduct() {
                 <div class="input-field col s12 m12 l6" onChange={event => { setCategory(event.target.value) }}>
                   <i className="material-icons prefix hide-on-small-only">content_paste</i>
                   <select>
+                    <option value=""></option>
                     <option value="tv">Tv's</option>
                     <option value="eletrodomestico">Eletrodoméstico</option>
                     <option value="videogame">Videogame</option>
