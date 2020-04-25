@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import signin from '../services/googleLogin';
 import './styles/Principal.css';
 
 
@@ -25,17 +26,17 @@ class Principal extends Component {
                                     </div>
                                 </div>
                                 <div className="col s12 m6 hide-on-med-and-down">
-                                    <div className="container red" style={{ height: '300px' }}></div>
+                                    <div className="btn">
+                                        
+                                        {/* Botão para o login através do Google */}
+                                        <a href={ signin.googleLoginURL } >Login with Google</a>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="parallax">
                             <img src="/assets/img/background2.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, px, 1000px)', filter: 'grayscale(100%)' }} />
-                        </div>
-                    </div>
-                    <div className="container hide-on-large-only show-on-small">
-                        <div className="section red">
-                            <div className="container" style={{ height: '300px' }}></div>
                         </div>
                     </div>
                     <div className="container">

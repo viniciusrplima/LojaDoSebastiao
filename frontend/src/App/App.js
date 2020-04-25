@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Games from '../Views/Games';
 import Eletronicos from '../Views/Eletronicos';
@@ -6,12 +6,20 @@ import Celulares from '../Views/Celulares';
 import Tv from '../Views/Tv';
 import Newproduct from '../Views/Newproduct';
 import Edit from '../Views/Edit';
-
-
+import googleLogin from '../services/googleLogin';
 
 import './App.css';
 
+
 class App extends Component {
+
+    logOut() {
+        googleLogin.logout()
+	.then(() => {
+	   window.location.reload();  
+	})
+    }
+
     render() {
         return (
             <>
@@ -40,13 +48,19 @@ class App extends Component {
                     <li><a href="/app/games" className="white-text"><i className="material-icons white-text">games</i>Videogame</a></li>
                     <li><a href="/app/celulares" className="white-text"><i className="material-icons white-text">smartphone</i>Celulares</a></li>
                     <li><div className="divider"></div></li>
-
+                    <li className="hide-on-med-and-down">
+                        <a className="waves-effect waves-light btn grey darken-1 white-text" href="/app/newproduct">
+                            <i className="material-icons white-text left">add_boxs</i>
+                            Adicionar Produto
+                        </a>
+                    </li>
                     <li>
-                        <a className="waves-effect waves-light btn grey darken-1 white-text">
+                        <a className="waves-effect waves-light btn grey darken-1 white-text" onClick={ this.logOut }>
                             <i className="material-icons white-text left">exit_to_app</i>
                             Log Out
                         </a>
                     </li>
+
                 </ul>
 
                 <main>
@@ -70,7 +84,7 @@ class App extends Component {
                         <Route path="/app/edit/:id" component={Edit} />
                     </Switch>
 
-                    <div className="fixed-action-btn">
+                    <div className="fixed-action-btn hide-on-large-only">
                         <a className="btn-floating tooltipped btn-large grey darken-4" data-position="left" data-tooltip="Adicione um novo produto" href="/app/newproduct">
                             <i className="large material-icons">add_circle</i>
                         </a>
