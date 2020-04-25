@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com/';
-const apiURL = 'http://localhost:5050/';
+const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com/';
 
 const index = ( category ) => {
     const token = localStorage.getItem('loja-do-sebastiao-token');

@@ -2,8 +2,8 @@
 import * as queryString from 'query-string';
 import axios from 'axios';
 
-const apiURL = 'http://localhost:5050';
-const redirectURL = 'http://localhost:3000';
+const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com';
+const redirectURL = 'https://loja-do-sebastiao.herokuapp.com';
 
 const stringifiedParams = queryString.stringify({
   client_id: '780399092682-lsjkeo6d5m5eeicumjj0el8vrvrunult.apps.googleusercontent.com',
@@ -62,7 +62,7 @@ async function getToken() {
 async function logout() {
   const token = localStorage.getItem('loja-do-sebastiao-token');
   localStorage.removeItem('loja-do-sebastiao-token');
-  return axios.post('http://localhost:5050/logout', { token });
+  return axios.post(`${ apiURL }/logout`, { token });
 }
 
 export default {
