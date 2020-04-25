@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Games from '../Views/Games';
 import Eletronicos from '../Views/Eletronicos';
@@ -6,12 +6,20 @@ import Celulares from '../Views/Celulares';
 import Tv from '../Views/Tv';
 import Newproduct from '../Views/Newproduct';
 import Edit from '../Views/Edit';
-
-
+import googleLogin from '../services/googleLogin';
 
 import './App.css';
 
+
 class App extends Component {
+
+    logOut() {
+        googleLogin.logout()
+	.then(() => {
+	   window.location.reload();  
+	})
+    }
+
     render() {
         return (
             <>
@@ -47,7 +55,7 @@ class App extends Component {
                         </a>
                     </li>
                     <li>
-                        <a className="waves-effect waves-light btn grey darken-1 white-text">
+                        <a className="waves-effect waves-light btn grey darken-1 white-text" onClick={ this.logOut }>
                             <i className="material-icons white-text left">exit_to_app</i>
                             Log Out
                         </a>

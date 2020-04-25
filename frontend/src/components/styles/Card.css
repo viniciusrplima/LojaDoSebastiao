@@ -1,7 +1,4 @@
-.card {
-    width: 250px;
-}
-
 .card img {
-    height: 200px;
+	height: 250px;
+	width: auto;
 }

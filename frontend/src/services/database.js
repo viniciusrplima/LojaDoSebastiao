@@ -1,13 +1,17 @@
 import axios from 'axios';
 
-const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com/';
+//const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com/';
+const apiURL = 'http://localhost:5050/';
 
 const index = ( category ) => {
-    return axios.get(`${apiURL}${category}`);
+    const token = localStorage.getItem('loja-do-sebastiao-token');
+    return axios.get(`${apiURL}${category}?token=${ token }`);
 }
 
 const store = ({ name, price, quantity, category, image }) => {
-    axios.post(apiURL, {
+    const token = localStorage.getItem('loja-do-sebastiao-token');
+
+    axios.post(`${apiURL}?token=${ token }`, {
         name, 
         price, 
         quantity, 
@@ -32,18 +36,21 @@ const store = ({ name, price, quantity, category, image }) => {
 }
 
 const update = ( id, product ) => {
-    return axios.put(`${ apiURL }${ id }`, product);
+    const token = localStorage.getItem('loja-do-sebastiao-token');
+    return axios.put(`${ apiURL }${ id }?token=${ token }`, product);
 }
 
 const remove = ( id ) => {
-    return axios.delete(`${ apiURL }${ id }`);
+    const token = localStorage.getItem('loja-do-sebastiao-token');
+    return axios.delete(`${ apiURL }${ id }?token=${ token }`);
 }
 
 const updateImage = ( id, image ) => {
+    const token = localStorage.getItem('loja-do-sebastiao-token');
     const formData = new FormData();
     formData.append('file', image);
 
-    return axios.post(`${ apiURL }image/${ id }`, formData, {
+    return axios.post(`${ apiURL }image/${ id }?token=${ token }`, formData, {
       'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
     });
 

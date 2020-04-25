@@ -22,13 +22,20 @@ export default function Card({ product }) {
   }, [prodQuantity])
 
   const increment = function () {
-    setProdQuantity(prev => prev + 1);
-    database.update(id, { quantity: prodQuantity });
+	  setProdQuantity(prev => {
+    		database.update(id, { quantity: prev+1 });
+		return prev+1;
+	  });
   }
 
   const decrement = function () {
-    setProdQuantity(prev => prev > 0 ? prev - 1 : 0);
-    database.update(id, { quantity: prodQuantity });
+	  setProdQuantity(prev => {
+		  if( prev > 0 ) {
+    			database.update(id, { quantity: prev-1 });
+			return prev-1;
+		  }
+		  return 0;
+	  });
   }
 
   const removeProduct = function (event) {
