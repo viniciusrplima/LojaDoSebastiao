@@ -2,8 +2,9 @@
 import * as queryString from 'query-string';
 import axios from 'axios';
 
-const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com';
-const redirectURL = 'https://loja-do-sebastiao.herokuapp.com';
+const apiURL = 'http://localhost:5050';
+const redirectURL = 'http://localhost:3000';
+const storedTokenName = 'loja-do-sebastiao-token';
 
 const stringifiedParams = queryString.stringify({
   client_id: '780399092682-lsjkeo6d5m5eeicumjj0el8vrvrunult.apps.googleusercontent.com',
@@ -40,7 +41,7 @@ async function getAccessTokenFromCode(code) {
 // Gera o token
 // Verifica se o token é válido
 // Se for, salva o token
-async function getToken() {
+async function storeToken() {
   const urlParams = queryString.parse(window.location.search);
 
   if (urlParams.error) {
@@ -51,23 +52,29 @@ async function getToken() {
 
   if(urlParams.code) {
       const token = await getAccessTokenFromCode(urlParams.code);
-      localStorage.setItem('loja-do-sebastiao-token', token);
-      axios.post(`${ apiURL }/auth`, { token })
-      .catch( err => {
-	console.log(err);
-      } )
-  } 
+      const { data } = await axios.post(`${ apiURL }/auth`, { token })
+      if(data.accessPermission) {
+          localStorage.setItem( storedTokenName, token );
+      }	 
+  }
 }
 
 async function logout() {
-  const token = localStorage.getItem('loja-do-sebastiao-token');
-  localStorage.removeItem('loja-do-sebastiao-token');
-  return axios.post(`${ apiURL }/logout`, { token });
+  const storedToken = localStorage.getItem( storedTokenName );
+  if( storedToken ) {
+    localStorage.removeItem( storedTokenName );
+    return axios.post(`${ apiURL }/logout`, { storedToken });
+  }
+}
+
+function getStoredToken() {
+	return localStorage.getItem(storedTokenName);
 }
 
 export default {
     googleLoginURL, 
-    getToken,
-    logout
+    storeToken,
+    logout,
+    getStoredToken,
 };
     
