@@ -15,7 +15,7 @@ class Principal extends Component {
                         </div>
                     </nav>
                 </header>
-                <main style={{minHeight: '500px'}}>
+                <main style={{ minHeight: '500px' }}>
                     <div className="parallax-container valign-wrapper">
                         <div className="section no-pad-bot" style={{ width: '100%' }}>
                             <div className="row">
@@ -25,12 +25,12 @@ class Principal extends Component {
                                         <h5 className="texto-abaixo  white-text">Sistema que tem com intuito de gerenciar eletrônicos por categorias para melhor representar sua loja.</h5>
                                     </div>
                                 </div>
-                                <div className="col s12 m6 hide-on-med-and-down">
-                                    <div className="btn">
-                                        
-                                        {/* Botão para o login através do Google */}
-                                        <a href={ signin.googleLoginURL } >Login with Google</a>
-
+                                <div className="col s12 m6 l6 xl6">
+                                    <div className="container valign-wrapper"  style={{ minHeight: '300px' }}>
+                                        <a href={ signin.googleLoginURL } className="waves-effect waves-light btn-large red darken-3" style={{ margin: 'auto' }}>
+                                            <i className="material-icons right">account_circle</i>
+                                        Login com o Google
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -67,9 +67,9 @@ class Principal extends Component {
                                         <h5 className="center">Fácil de manusear</h5>
 
                                         <p className="light">
-                                            Fornecemos um sistema simples, mas que ao mesmo tempo é super intuitivo que 
-                                            ajudar os novos usuários a começar. Também estamos sempre abertos a feedback 
-                                            e podemos responder a quaisquer perguntas que um usuário possa ter sobre o 
+                                            Fornecemos um sistema simples, mas que ao mesmo tempo é super intuitivo que
+                                            ajudar os novos usuários a começar. Também estamos sempre abertos a feedback
+                                            e podemos responder a quaisquer perguntas que um usuário possa ter sobre o
                                             Sistema.
                                         </p>
                                     </div>
@@ -90,7 +90,7 @@ class Principal extends Component {
                         </div>
                         <div className="parallax">
                             <img src="assets/img/background.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, 1000px)', filter: 'grayscale(100%)' }} />
-                            </div>
+                        </div>
                     </div>
                 </main>
                 <footer className="page-footer grey darken-2">
