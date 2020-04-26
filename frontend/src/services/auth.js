@@ -1,4 +1,8 @@
+import googleLogin from '../services/googleLogin.js';
+
 export const isAuthenticate = () => {
-  const token = localStorage.getItem('loja-do-sebastiao-token');
-  return token != null;
+    const token = googleLogin.getStoredToken();
+    console.log( token );
+    if( token ) return true;
+    else return false;
 };

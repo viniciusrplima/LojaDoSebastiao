@@ -9,30 +9,26 @@ const users = [
 
 let tokens = [];
 
-function verifyToken(token) {
-	axios.post(`https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=${ token }`)
-	.then( ({ data }) => {
-		if(data.email_verified) {
-			if(users.includes(data.email)) {
-				console.log('access permited');
-				tokens.push( token );
-			}
-			else {
-				console.log('access denied');
-			}
-		}
-	})
-	.catch( err => {
-		console.log(err);
-	} )
+async function verifyToken(token) {
+	const { data } = await axios.post(`https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=${ token }`)
+	if(data.email_verified) {
+		return users.includes( data.email );
+	}
+	return false;
 }
 
 // Controller methods
-function authentication(req, res) {
+async function authentication(req, res) {
 	const { token } = req.body;
-	verifyToken(token);
-	console.log('token verified');
-	res.send('OK');
+	const verified = await verifyToken(token);
+	
+	if( verified ) {
+		tokens.push( token );
+		res.send({ accessPermission: true });
+	}
+	else {
+		res.send({ accessPermission: false });
+	}
 }
 
 function accessVerify(req, res, next) {
@@ -55,6 +51,8 @@ function logout(req, res) {
 		tokens[ index ] = tokens[ tokens.length-1 ];
 		tokens.pop();
 	}
+
+	console.log(tokens);
 
 	res.send('OK');
 }

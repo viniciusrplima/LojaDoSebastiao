@@ -1,15 +1,16 @@
 import axios from 'axios';
+import googleLogin from '../services/googleLogin.js';
 
 //const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com/';
-const apiURL = 'https://api-loja-do-sebastiao.herokuapp.com/';
+const apiURL = 'http://localhost:5050/';
 
 const index = ( category ) => {
-    const token = localStorage.getItem('loja-do-sebastiao-token');
+    const token = googleLogin.getStoredToken();
     return axios.get(`${apiURL}${category}?token=${ token }`);
 }
 
 const store = ({ name, price, quantity, category, image }) => {
-    const token = localStorage.getItem('loja-do-sebastiao-token');
+    const token = googleLogin.getStoredToken();
 
     axios.post(`${apiURL}?token=${ token }`, {
         name, 
@@ -36,17 +37,17 @@ const store = ({ name, price, quantity, category, image }) => {
 }
 
 const update = ( id, product ) => {
-    const token = localStorage.getItem('loja-do-sebastiao-token');
+    const token = googleLogin.getStoredToken();
     return axios.put(`${ apiURL }${ id }?token=${ token }`, product);
 }
 
 const remove = ( id ) => {
-    const token = localStorage.getItem('loja-do-sebastiao-token');
+    const token = googleLogin.getStoredToken();
     return axios.delete(`${ apiURL }${ id }?token=${ token }`);
 }
 
 const updateImage = ( id, image ) => {
-    const token = localStorage.getItem('loja-do-sebastiao-token');
+    const token = googleLogin.getStoredToken();
     const formData = new FormData();
     formData.append('file', image);
 

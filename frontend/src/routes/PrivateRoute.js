@@ -10,7 +10,7 @@ const PrivateRoute = function PrivateRoute({component: Component, ...rest}) {
 
     useEffect( () => {
 	    const getTokenBeforeRender = async () => {
-		    await googleLogin.getToken();
+		    await googleLogin.storeToken();
 		    setLoginDone(true);
 	    }
 	    getTokenBeforeRender();
