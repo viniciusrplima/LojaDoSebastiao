@@ -24,7 +24,7 @@ class App extends Component {
         return (
             <>
                 <header>
-                    <nav className="grey darken-2 hide-on-large-only">
+                    <nav className="grey darken-2 hide-on-large-only center">
                         <div className="nav-wrapper">
                             <a href="/app/" className="nav-logo">Loja do Sebastião</a>
                             <a data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
