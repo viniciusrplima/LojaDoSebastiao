@@ -12,6 +12,7 @@ export default function Newproduct() {
   
   const addProduct = function( product ) {
     database.store( product );
+    window.location.href = 'https://loja-do-sebastiao.herokuapp.com/app/'+category;
   }
 
   return (

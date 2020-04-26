@@ -37,6 +37,8 @@ export default function Edit( props ) {
         console.log(err);
       })
     }
+
+    window.location.href = 'https://loja-do-sebastiao.herokuapp.com/app/'+category;
   }
 
   return (
