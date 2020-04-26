@@ -24,7 +24,7 @@ const PrivateRoute = function PrivateRoute({component: Component, ...rest}) {
          ? 
          (<Component {...props}/>) 
          :
-         (<Redirect to={{pathname: '/', state: {from:props.location}}}/>)
+         (<Redirect to={{pathname: '/accessdenied', state: {from:props.location}}}/>)
      )}/>
      :
      <></>
