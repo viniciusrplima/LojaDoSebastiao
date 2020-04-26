@@ -4,7 +4,7 @@ import "./styles/error.css";
 export default function AccessDenied() {
 
 	return (
-		<div id="NotFound">
+		<div id="AccessDenied">
             <div id="mensagemDeErro">
                 <p>Acesso negado</p>
                 <p id="numErro">Error 403</p>
