@@ -66,7 +66,10 @@ class App extends Component {
                 <main>
 
                     <Switch>
-                        <Route path="/app/tv">
+                        <Route exact path="/app">
+                            <Tv></Tv>
+                        </Route>
+                        <Route exact path="/app/tv">
                             <Tv></Tv>
                         </Route>
                         <Route path="/app/eletronicos">
