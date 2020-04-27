@@ -36,7 +36,7 @@ class App extends Component {
                     <li>
                         <div className="user-view">
                             <div className="background">
-                                <img style={{ filter: 'grayscale(40%)' }} src="/assets/img/sidenavimg.jpg" />
+                                <img id="imgapp" style={{ filter: 'grayscale(50%)' }} src="/assets/img/sidenavimg2.jpeg" />
                             </div>
                             <h3 className="white-text texto-logo">Loja do Sebastião</h3>
                         </div>
