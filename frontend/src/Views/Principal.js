@@ -10,7 +10,7 @@ class Principal extends Component {
             <>
                 <header>
                     <nav>
-                        <div className="nav-wrapper grey darken-2">
+                        <div className="nav-wrapper brown darken-2">
                             <a href="#" className="brand-logo">Loja do Sebastião</a>
                         </div>
                     </nav>
@@ -22,7 +22,7 @@ class Principal extends Component {
                                 <div className="col s12 m6">
                                     <div className="container">
                                         <h1 className="texto-principal white-text">CONTROLE SEU ESTOQUE!</h1>
-                                        <h5 className="texto-abaixo  white-text">Sistema que tem com intuito de gerenciar eletrônicos por categorias para melhor representar sua loja.</h5>
+                                        <h5 className="texto-abaixo  white-text">Sistema que tem como intuito gerenciar eletrônicos por categorias para melhor representar sua loja.</h5>
                                     </div>
                                 </div>
                                 <div className="col s12 m6 l6 xl6">
@@ -36,7 +36,7 @@ class Principal extends Component {
                             </div>
                         </div>
                         <div className="parallax">
-                            <img src="/assets/img/background2.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, px, 1000px)', filter: 'grayscale(100%)' }} />
+                            <img src="/assets/img/background3.png" style={{ opacity: '1', transform: 'translate3d(-50%, px, 1000px)', filter: 'grayscale(0%)' }} />
                         </div>
                     </div>
                     <div className="container">
@@ -89,11 +89,11 @@ class Principal extends Component {
                             </div>
                         </div>
                         <div className="parallax">
-                            <img src="assets/img/background.jpg" style={{ opacity: '1', transform: 'translate3d(-50%, 1000px)', filter: 'grayscale(100%)' }} />
+                            <img src="assets/img/background4.jpeg" style={{ opacity: '1', transform: 'translate3d(-50%, 1000px)', filter: 'grayscale(0%)' }} />
                         </div>
                     </div>
                 </main>
-                <footer className="page-footer grey darken-2">
+                <footer className="page-footer brown darken-2">
                     <div className="container">
                         <div className="row">
                             <div className="col l6 s12">
