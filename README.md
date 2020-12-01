@@ -1,4 +1,3 @@
-HEAD
 # Loja Do Sebastião
 
 Projeto criado como prova de aceitação para membros da CodeX Jr. O sistema consiste em um gerenciador de estoque de uma loja.
